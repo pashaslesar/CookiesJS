@@ -1,0 +1,61 @@
+// src/components/Header.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Header = () => {
+  const scrollToLove = () => {
+    const loveSection = document.getElementById('love');
+    if (loveSection) {
+      loveSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToCatalog = () => {
+    const catalogSection = document.getElementById('catalog');
+    if (catalogSection) {
+      catalogSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <header className="header">
+      <div className="container">
+        <div className="logo">
+          <img src="/images/logo.png" alt="Logo" />
+        </div>
+        <nav className="menu">
+          <ul className="menu-list">
+            <li className="menu-item" onClick={scrollToLove}>
+              <a>О нас</a>
+            </li>
+            <li className="menu-item" onClick={scrollToCatalog}>
+              <a>Каталог</a>
+            </li>
+            <li className="menu-item">
+              <Link to="/products" style={{ textDecoration: 'none', color: 'white' }}>
+                Оформить заказ
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link to="/registration" style={{ textDecoration: 'none', color: 'white' }}>
+                Регистрация
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link to="/help" style={{ textDecoration: 'none', color: 'white' }}>
+                Q&A
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link to="/profile" style={{ textDecoration: 'none', color: 'white' }}>
+                **Profile**
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

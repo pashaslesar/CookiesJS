@@ -1,0 +1,1 @@
+console.log('Файл order.html создан автоматически с помощью HtmlWebpackPlugin');
